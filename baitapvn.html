@@ -4,8 +4,9 @@
 <meta charset="utf-8">
 <title>Bai tap</title>
 </head>
+
 <body>
-  <input type="number" id="txtso_a">
+	<input type="number" id="txtso_a">
     <select id="cmb" onChange="Show()">
     	<option value="pt">Phép tính</option>
     	<option value="+">Cộng</option>
@@ -23,7 +24,6 @@
 			var a = parseInt(document.getElementById("txtso_a").value);
 			var b = parseInt(document.getElementById("txtso_b").value);
 			var cmb = document.getElementById("cmb").value;
-			if(cmb!='pt'){			
 			if(isNaN(a)==false&&isNaN(b)==false)
 			{
 			switch (cmb)
@@ -48,6 +48,10 @@
 				kq.value=s;	
 				break;
 			}
+			case 'pt' : {
+				kq.value='';	
+				break;
+			}
 			default : {
 			 
 			}
@@ -59,7 +63,7 @@
 				 document.getElementById('cmb').options[0].selected='selected';
 				 kq.value='';
 			}
-			}
+			
 		}
 	 </script>
 </body>
