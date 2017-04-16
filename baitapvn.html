@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Bai tap</title>
+</head>
+
+<body>
+	<input type="number" id="txtso_a">
+    <select id="cmb" onChange="Show()">
+    	<option value="pt">Phép tính</option>
+    	<option value="+">Cộng</option>
+        <option value="-">Trừ</option>
+        <option value="*">Nhân</option>
+        <option value="/">Chia</option>
+     </select>
+     <input type="number" id="txtso_b">
+     =
+     <input type="text" id="ketqua"><br><br>
+     
+     
+     <script type="text/javascript">
+	 	function Show() {
+			var s=0;
+			var kq = document.getElementById("ketqua");
+			var a = parseInt(document.getElementById("txtso_a").value);
+			var b = parseInt(document.getElementById("txtso_b").value);
+			var cmb = document.getElementById("cmb").value;
+			if(isNaN(a)==false&&isNaN(b)==false)
+			{
+			switch (cmb)
+			{
+			case '+' : {
+				s=a+b;
+				kq.value=s;	
+				break;
+			}
+			case '-' : {
+				s=a-b;
+				kq.value=s;	
+				break;
+			}
+			case '*' : {
+				s=a*b;
+				kq.value=s;	
+				break;
+			}
+			case '/' : {
+				s=a/b;
+				kq.value=s;	
+				break;
+			}
+			case 'pt' : {
+				break;
+			}
+			default : {
+			 
+			}
+			}
+		    }
+			 else
+			{
+				 alert('Chưa nhập số');
+				 document.getElementById('cmb').options[0].selected='selected';
+			}
+          
+		   
+		}
+	 </script>
+</body>
+</html>
